@@ -1,4 +1,3 @@
-#include <string>
 #include <iostream>
 #include "environment.h"
 
@@ -7,21 +6,24 @@ Environment::Environment(int x, int y, std::string out_shape) {
 	outter_shape = out_shape;
 	x_length = x;
 	y_length = y;
-	x_coor = new int[x_length];
-	y_coor = new int[y_length];
-	for (int i = 0; i < x; i++) { x_coor[i] = 0; }
-	for (int i = 0; i < y; i++) { y_coor[i] = 0; }
+	std::string tmp_string;
+	for (int i = 0; i < x_length; i++) {
+		tmp_string = "";
+		for (int j = 0; j < y_length; j++) {
+			if (i == 0 || i == x_length - 1 || j == 0 || j == y_length - 1)
+				tmp_string = tmp_string + "*";
+			else
+				tmp_string = tmp_string + " ";
+		}
+		environment.push_back(tmp_string);
+	}
+
 };
 
 void Environment::display_environment() {
 
+	std::cout << "\r";
 	for (int i = 0; i < x_length; i++) {
-		for (int j = 0; j < y_length; j++) {
-			if (i == 0 || i == x_length - 1 || j == 0 || j == y_length - 1)
-				std::cout << "*";
-			else
-				std::cout << " ";
-		}			
-		std::cout << "\n";
+		std::cout << environment[i] << std::endl;
 	}
 };

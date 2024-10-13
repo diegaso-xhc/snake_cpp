@@ -1,3 +1,2 @@
 ﻿  main.cpp
-C:\Users\User\source\repos\Snake\main.cpp(12,23): warning C4305: 'initializing': truncation from 'double' to 'float'
   Snake.vcxproj -> C:\Users\User\source\repos\Snake\Debug\Snake.exe
