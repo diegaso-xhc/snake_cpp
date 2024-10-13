@@ -1,6 +1,2 @@
-﻿  environment.cpp
-  main.cpp
-  snake.cpp
-C:\Users\User\source\repos\Snake\snake.cpp(20,20): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
+﻿  main.cpp
   Snake.vcxproj -> C:\Users\User\source\repos\Snake\Debug\Snake.exe

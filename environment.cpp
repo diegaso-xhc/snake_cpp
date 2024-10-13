@@ -17,6 +17,7 @@ Environment::Environment(int x, int y, std::string out_shape) {
 		}
 		environment.push_back(tmp_string);
 	}
+	static_environment = environment;
 
 };
 
