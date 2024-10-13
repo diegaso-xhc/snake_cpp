@@ -24,12 +24,18 @@
     <ClCompile Include="console_handle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="snake.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="environment.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="console_handle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="snake.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
