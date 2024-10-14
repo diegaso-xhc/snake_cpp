@@ -10,8 +10,10 @@ Environment::Environment(int x, int y, std::string out_shape) {
 	for (int i = 0; i < x_length; i++) {
 		tmp_string = "";
 		for (int j = 0; j < y_length; j++) {
-			if (i == 0 || i == x_length - 1 || j == 0 || j == y_length - 1)
-				tmp_string = tmp_string + "*";
+			if (i == 0 || i == x_length - 1)
+				tmp_string = tmp_string + "-";
+			else if (j == 0 || j == y_length - 1)
+				tmp_string = tmp_string + "|";
 			else
 				tmp_string = tmp_string + " ";
 		}

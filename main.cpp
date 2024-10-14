@@ -1,6 +1,7 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
+#include <conio.h>
 
 #include "environment.h"
 #include "console_handle.h"
@@ -19,28 +20,93 @@ int main() {
 	std::cout << x1 << std::endl;
 	std::cout << std::scientific << x1 << std::endl;*/
 
-	int l_snake = 5;
+	int l_snake = 15;
 	int init_x = 10;
-	int init_y = 10;
-	int height_environment = 20;
-	int width_environment = 40;
+	int init_y = 20;
+	int height_environment = 40;
+	int width_environment = 80;
 
 
 	Environment square_1(height_environment, width_environment, "square");
 	Snake sneaky(l_snake, init_x, init_y);
-		
-	for (int it = 0; it < 20; it++) {
+	
+	char x = 't';
+	int inc_x = 0;
+	int inc_y = 0;
+	bool time_flag = true;
+
+	while (true) {
+
+		std::cout << "RUNNING PROGRAM" << std::endl;
+		for (int i = 0; i < l_snake; i++)
+			square_1.environment[sneaky.body_positions[i][0]][sneaky.body_positions[i][1]] = ' ';
+		std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+
+		if (_kbhit())
+		{
+			x = _getch();
+		}
+		if (x == 'w') {
+			inc_x = -1;
+			inc_y = 0;	
+		}
+		else if (x == 's') {
+			inc_x = 1;
+			inc_y = 0;
+		}
+		else if (x == 'a') {
+			inc_x = 0;
+			inc_y = -1;
+		}
+		else if (x == 'd') {
+			inc_x = 0;
+			inc_y = 1;
+		}
+		else if (x == 'q')
+			break;
+		sneaky.track_head(inc_x, inc_y);
+		for (int i = 0; i < l_snake; i++)
+			square_1.environment[sneaky.body_positions[i][0]][sneaky.body_positions[i][1]] = '*';
+		square_1.display_environment();
+		clear_console();
+	}
+	
+	
+	/*
+	for (int it = 0; it < 10; it++) {
 		std::cout << "RUNNING PROGRAM" << std::endl;
 		for (int i = 0; i < l_snake; i++)
 			square_1.environment[sneaky.body_positions[i][0]][sneaky.body_positions[i][1]] = ' ';
 		std::this_thread::sleep_for(std::chrono::milliseconds(200));
-		sneaky.track_head(0, 1);
+		if (it < 5)
+			sneaky.track_head(0, 1);
+		else
+			sneaky.track_head(1, 0);
 		for (int i = 0; i < l_snake; i++)
-			square_1.environment[sneaky.body_positions[i][0]][sneaky.body_positions[i][1]] = '~';
+			square_1.environment[sneaky.body_positions[i][0]][sneaky.body_positions[i][1]] = '*';
 		square_1.display_environment();
 		clear_console();
-	}
+	}*/
+	/*
+	char x;
+	while (1)
+	{
+		x = _getch();
+		std::cout << x << std::endl;
+		if (x == 'w')
+			std::cout << "up" << std::endl;
+		else if (x == 's')
+			std::cout << "down" << std::endl;
+		else if (x == 'a')
+			std::cout << "left" << std::endl;
+		else if (x == 'd')
+			std::cout << "right" << std::endl;
 
-	std::cin.get();
+
+	}//while1*/
+
+
+	//std::cin.get();
 	return 0;
 }
