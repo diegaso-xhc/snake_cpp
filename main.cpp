@@ -20,12 +20,11 @@ int main() {
 	std::cout << x1 << std::endl;
 	std::cout << std::scientific << x1 << std::endl;*/
 
-	int l_snake = 15;
-	int init_x = 10;
+	int l_snake = 10;
+	int init_x = 20;
 	int init_y = 20;
-	int height_environment = 40;
-	int width_environment = 80;
-
+	int height_environment = 30;
+	int width_environment = 30;
 
 	Environment square_1(height_environment, width_environment, "square");
 	Snake sneaky(l_snake, init_x, init_y);
@@ -65,7 +64,7 @@ int main() {
 		}
 		else if (x == 'q')
 			break;
-		sneaky.track_head(inc_x, inc_y);
+		sneaky.track_head(inc_x, inc_y, square_1);
 		for (int i = 0; i < l_snake; i++)
 			square_1.environment[sneaky.body_positions[i][0]][sneaky.body_positions[i][1]] = '*';
 		square_1.display_environment();
