@@ -6,7 +6,7 @@
 #include "environment.h"
 #include "console_handle.h"
 #include "snake.h"
-
+#include "food.h"
 
 int main() {
 
@@ -23,12 +23,15 @@ int main() {
 	int l_snake = 10;
 	int init_x = 10;
 	int init_y = 20;
+	int x_food = 2;
+	int y_food = 2;
 	int height_environment = 22;
 	int width_environment = 22;
 
 	Environment square_1(height_environment, width_environment, "square");
 	Snake sneaky(l_snake, init_x, init_y);
-	
+	Food snack(x_food, y_food);
+
 	char x = 't';
 	int inc_x = 0;
 	int inc_y = 0;
@@ -66,6 +69,7 @@ int main() {
 		sneaky.track_head(inc_x, inc_y, square_1);
 		for (int i = 0; i < l_snake; i++)
 			square_1.environment[sneaky.body_positions[i][0]][sneaky.body_positions[i][1]] = '*';
+		square_1.environment[x_food][y_food] = '+';
 		square_1.display_environment();
 		clear_console();
 	}

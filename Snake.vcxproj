@@ -141,12 +141,14 @@
   <ItemGroup>
     <ClCompile Include="console_handle.cpp" />
     <ClCompile Include="environment.cpp" />
+    <ClCompile Include="food.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="snake.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="console_handle.h" />
     <ClInclude Include="environment.h" />
+    <ClInclude Include="food.h" />
     <ClInclude Include="snake.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
