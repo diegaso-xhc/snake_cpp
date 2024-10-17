@@ -15,21 +15,21 @@ void Snake::track_head(int inc_x, int inc_y, Environment env) {
 	update_position();
 	int tmp_x = body_positions[0][0] + inc_x;
 	int tmp_y = body_positions[0][1] + inc_y;
-	if (tmp_x >= env.x_length) {
-		body_positions[0][0] = 0;
+	if (tmp_x > env.x_length - 2) {
+		body_positions[0][0] = 1;
 		body_positions[0][1] = body_positions[0][1] + inc_y;
 	}		
-	else if (tmp_x <= 0) {
-		body_positions[0][0] = env.x_length;
+	else if (tmp_x < 1) {
+		body_positions[0][0] = env.x_length - 2;
 		body_positions[0][1] = body_positions[0][1] + inc_y;
 	}		
-	else if (tmp_y >= env.y_length) {
+	else if (tmp_y > env.y_length - 2) {
 		body_positions[0][0] = body_positions[0][0] + inc_x;
-		body_positions[0][1] = 0;
+		body_positions[0][1] = 1;
 	}		
-	else if (tmp_y <= 0) {
+	else if (tmp_y < 1) {
 		body_positions[0][0] = body_positions[0][0] + inc_x;
-		body_positions[0][1] = env.y_length;
+		body_positions[0][1] = env.y_length - 2;
 	}		
 	else {
 		body_positions[0][0] = body_positions[0][0] + inc_x;
