@@ -11,7 +11,19 @@ Snake::Snake(int len, int init_x, int init_y) {
 	}
 }
 
-void Snake::track_head(int inc_x, int inc_y, Environment env) {
+void Snake::track_head(int inc_x, int inc_y, Environment env, Food snack) {
+	eating = false;
+	if (body_positions[0][0] == snack.x_pos && body_positions[0][1] == snack.y_pos) {
+		body_positions.push_back({ body_positions.back()[0], body_positions.back()[1] });
+		length++;
+		eating = true;
+	}
+	
+	if (Assorted::find_vector_in_vector(body_positions[0], body_positions)) {
+		hurt = true;
+		return;
+	}
+		
 	update_position();
 	int tmp_x = body_positions[0][0] + inc_x;
 	int tmp_y = body_positions[0][1] + inc_y;

@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="assorted.cpp" />
     <ClCompile Include="console_handle.cpp" />
     <ClCompile Include="environment.cpp" />
     <ClCompile Include="food.cpp" />
@@ -146,6 +147,7 @@
     <ClCompile Include="snake.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="assorted.h" />
     <ClInclude Include="console_handle.h" />
     <ClInclude Include="environment.h" />
     <ClInclude Include="food.h" />

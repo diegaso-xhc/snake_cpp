@@ -27,6 +27,6 @@ void Environment::display_environment() {
 
 	std::cout << "\r";
 	for (int i = 0; i < x_length; i++) {
-		std::cout << environment[i] << std::endl;
+		std::cout << environment[i]<< std::endl;
 	}
 };

@@ -30,6 +30,9 @@
     <ClCompile Include="food.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="assorted.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="environment.h">
@@ -42,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="food.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="assorted.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
