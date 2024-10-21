@@ -55,3 +55,13 @@ void Snake::update_position() {
 		body_positions[i][1] = body_positions[i - 1][1];
 	}
 }
+
+void Snake::clear_snake(Environment& env) {
+	for (int i = 0; i < this->length; i++)
+		env.environment[this->body_positions[i][0]][this->body_positions[i][1]] = ' ';
+}
+
+void Snake::draw_snake(Environment& env) {
+	for (int i = 0; i < this->length; i++)
+		env.environment[this->body_positions[i][0]][this->body_positions[i][1]] = '*';
+}

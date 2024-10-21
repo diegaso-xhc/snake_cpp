@@ -12,7 +12,6 @@ bool Assorted::find_vector_in_vector(std::vector<int> x, std::vector<std::vector
 };
 
 std::vector<int> Assorted::random(int min_x, int max_x, int min_y, int max_y) {
-
 	std::vector<int> random_coordinates;
 	int x, y;
 
