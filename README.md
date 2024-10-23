@@ -17,4 +17,4 @@ Afterwards, you should see something similar to this:
 </p>
 
 
-If you were botn before the year 2000, you'll probably know what to do. Use the keys a,s,d,w to move, and q to quit.
+If you were born before the year 2000, you'll probably know what to do. Use the keys a,s,d,w to move, and q to quit.
