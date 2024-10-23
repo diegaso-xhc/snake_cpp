@@ -13,7 +13,7 @@ Afterwards, you should see something similar to this:
 <br />
 <br /> 
 <p align="center">
-   <img src="/Visualizations/Snake_background.jpg" width="700" />
+   <img src="/Visualizations/snake_sample.png" width="700" />
 </p>
 
 
