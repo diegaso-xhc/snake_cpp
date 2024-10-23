@@ -2,6 +2,8 @@
 #include <vector>
 #include <string>
 
+extern constexpr int environment_clearence = 2;
+
 class Environment {
 	public:
 		std::string outter_shape;
