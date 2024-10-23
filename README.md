@@ -6,7 +6,7 @@ This repository shows a simple c++ implementation of the famous snake game. Alth
 
 ## Usage
 
-To use it, simply clone the repository, and then run the main.cpp translation unit.
+This repository will directly work only on Windows. If you need to run it in Linux, please modify the console handle translation units. To use the repository, simply clone it, and then run the main.cpp translation unit.
 
 Afterwards, you should see something similar to this:
 
@@ -17,4 +17,4 @@ Afterwards, you should see something similar to this:
 </p>
 
 
-If you were botn before 2000, you'll probably know what to do. Use the keys a,s,d,w to move, and q to quit.
+If you were botn before the year 2000, you'll probably know what to do. Use the keys a,s,d,w to move, and q to quit.
