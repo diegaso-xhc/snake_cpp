@@ -1,6 +1,8 @@
 #include <iostream>
 #include "environment.h"
 
+extern const int environment_clearence = 2;
+
 Environment::Environment(int x, int y, std::string out_shape) {
 
 	outter_shape = out_shape;
@@ -25,8 +27,10 @@ Environment::Environment(int x, int y, std::string out_shape) {
 
 void Environment::display_environment() {
 
-	std::cout << "\r";
+
+	std::cout << "\033[2J\033[1;1H";  // ANSI escape code to clear screen
 	for (int i = 0; i < x_length; i++) {
-		std::cout << environment[i]<< std::endl;
+		std::cout << "\r";
+		std::cout << environment[i] << "\n";
 	}
 };

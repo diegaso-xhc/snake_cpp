@@ -1,8 +1,9 @@
 #pragma once
+
 #include <vector>
 #include <string>
 
-extern constexpr int environment_clearence = 2;
+extern const int environment_clearence;
 
 class Environment {
 	public:
