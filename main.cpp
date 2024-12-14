@@ -1,7 +1,7 @@
 #include <iostream>
 #include <chrono>
 #include <thread>
-#include <conio.h>
+#include <curses.h>
 
 #include "environment.h"
 #include "console_handle.h"
@@ -10,13 +10,19 @@
 
 constexpr int height_environment = 30;
 constexpr int width_environment = 70;
-constexpr int pause = 100;
+constexpr int pause = 50;
 
 int main() {
 
+	// Initialize the curses library
+    initscr();           // Start curses mode
+    noecho();            // Disable automatic echoing of typed characters
+    curs_set(FALSE);     // Hide the cursor
+    keypad(stdscr, TRUE); // Enable keyboard input for arrow keys
+
 	int l_snake = 15;
-	int init_x = 15;
-	int init_y = 15;
+	int init_x = 25;
+	int init_y = 25;
 	int x_food = height_environment / 2;
 	int y_food = width_environment / 2;
 	int inc_x = 0;
@@ -26,23 +32,23 @@ int main() {
 	char x = 't';
 	int direction = 0;
 	std::vector<int> tmp_pos;
-
+	
 	Environment square_environment(height_environment, width_environment, "square");
 	Snake sneaky(l_snake, init_x, init_y);
 	Food snack(x_food, y_food);
 	
 	while (true) {
-
+		
 		if (sneaky.hurt) {
 			start = false;
 			clear_console();
 			std::cout << "You bit yourself. Try again!" << std::endl;
+			std::this_thread::sleep_for(std::chrono::milliseconds(5000));
+			break;
 		}
 
-		if (_kbhit())
-		{
-			x = _getch();
-		}
+		timeout(0); // Non-blocking input
+		x = getch();
 		if (x == 'w' && direction != 2) {
 			inc_x = -1;
 			inc_y = 0;
@@ -86,11 +92,12 @@ int main() {
 			else {
 				snack.draw_food(square_environment);
 			}
+			square_environment.display_environment();			
 
-			square_environment.display_environment();
-
-			clear_console();
-		}		
+			refresh();
+		}	
 	}
+
+	endwin();
 	return 0;
 }

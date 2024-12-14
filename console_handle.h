@@ -1,4 +1,6 @@
 #pragma once
-#include <Windows.h>
+
+#include <cstdlib>
+#include <curses.h>
 
 void clear_console();
