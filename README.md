@@ -15,7 +15,7 @@ git clone https://github.com/diegaso-xhc/snake_cpp.git
 2. Create a build folder on tha root directory
 
 ```
-mkdir build && cd build
+cd snake_cpp && mkdir build && cd build
 ```
 
 3. Use cmake as follows:
