@@ -8,9 +8,9 @@ This repository shows a simple c++ implementation of the famous snake game. Alth
 
 1. Clone the repository
 
-\`\`\`
+```
 git clone https://github.com/diegaso-xhc/snake_cpp.git
-\`\`\`
+```
 
 2. Create a build folder on tha root directory
 
