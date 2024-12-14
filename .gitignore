@@ -1,3 +1,5 @@
 Debug/
 Snake.sln
 Snake.vcxproj*
+.vscode/*
+build/*
