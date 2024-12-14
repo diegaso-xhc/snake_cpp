@@ -14,27 +14,27 @@ git clone https://github.com/diegaso-xhc/snake_cpp.git
 
 2. Create a build folder on tha root directory
 
-\`\`\`
+```
 mkdir build && cd build
-\`\`\`
+```
 
 3. Use cmake as follows:
 
-\`\`\`
+```
 cmake .. 
-\`\`\`
+```
 
 4. Build the project
 
-\`\`\`
+```
 make
-\`\`\`
+```
 
 5. Start the game
 
-\`\`\`
+```
 ./SnakeGame
-\`\`\`
+```
 
 Afterwards, press any key and you should see something similar to this:
 
